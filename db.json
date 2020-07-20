@@ -10,5 +10,49 @@
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "pods": [
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "name": "pod-1",
+        "namespace": "binlog"
+      },
+      "spec": {
+        "restartPolicy": "OnFailure",
+        "containers": [
+          {
+            "name": "replication-container",
+            "image": "busybox",
+            "command": [
+              "echo",
+              "Hello, Tom Cruise!"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "name": "pod-2",
+        "namespace": "binlog"
+      },
+      "spec": {
+        "restartPolicy": "OnFailure",
+        "containers": [
+          {
+            "name": "replication-container",
+            "image": "busybox",
+            "command": [
+              "echo",
+              "Hello, Ryan Reynolds!"
+            ]
+          }
+        ]
+      }
+    }
+  ]
 }
