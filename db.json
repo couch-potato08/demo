@@ -1,16 +1,25 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "Post 1"
-    },
-    {
-      "id": 2, 
-      "title": "Post 2" 
-    },
-    { 
-      "id": 3,
-      "title": "Post 3"
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "name": "pod-2",
+        "namespace": "binlog"
+      },
+      "spec": {
+        "restartPolicy": "OnFailure",
+        "containers": [
+          {
+            "name": "replication-container",
+            "image": "busybox",
+            "command": [
+              "echo",
+              "Hello, Ryan Reynolds!"
+            ]
+          }
+        ]
+      }
     }
   ],
   "comments": [
